@@ -38,6 +38,29 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+  <div class="hero-car" aria-hidden="true">
+    <svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="carBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3a3d46"/>
+          <stop offset="100%" stop-color="#0a0b0d"/>
+        </linearGradient>
+        <linearGradient id="carGlow" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#1454d1" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#e30613" stop-opacity="0.9"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="450" cy="300" rx="420" ry="22" fill="#000" opacity="0.5"/>
+      <path d="M60 235 C 90 180, 150 150, 230 145 C 270 110, 340 85, 430 82 C 520 80, 590 95, 640 130 C 700 132, 770 150, 820 190 C 850 205, 855 225, 840 240 L 800 245 C 795 210, 760 185, 720 185 C 680 185, 650 210, 645 245 L 300 245 C 295 210, 262 185, 222 185 C 182 185, 150 210, 145 245 L 70 243 C 55 243, 50 240, 60 235 Z" fill="url(#carBody)" stroke="url(#carGlow)" stroke-width="3"/>
+      <path d="M255 148 C 290 118, 345 98, 425 96 C 500 95, 555 108, 595 132 L 590 150 L 265 152 Z" fill="#15161a" stroke="#e30613" stroke-opacity="0.5" stroke-width="2"/>
+      <circle cx="222" cy="245" r="46" fill="#0a0b0d" stroke="#3c7dff" stroke-width="4"/>
+      <circle cx="222" cy="245" r="20" fill="#1e2027"/>
+      <circle cx="720" cy="245" r="46" fill="#0a0b0d" stroke="#e30613" stroke-width="4"/>
+      <circle cx="720" cy="245" r="20" fill="#1e2027"/>
+      <rect x="800" y="188" width="34" height="10" rx="4" fill="#e30613"/>
+      <rect x="52" y="205" width="18" height="8" rx="3" fill="#f5f6f8" opacity="0.8"/>
+    </svg>
+  </div>
   <div class="hero-content">
     <p class="eyebrow"><span class="dot"></span>Spécialiste agréé HP Tuners — Auto &amp; Moto</p>
     <h1>La reprogrammation moteur,<br><span class="accent-red">réglée en conduite réelle.</span></h1>
@@ -132,7 +155,7 @@
   <!-- US CARS -->
   <div class="vehicle-block">
     <div class="vehicle-block-title">
-      <span class="flag flag-us"></span>
+      <span class="flag flag-emoji">🇺🇸</span>
       <h3>Voitures américaines <span class="badge-strong">Notre spécialité</span></h3>
     </div>
     <div class="car-grid">
@@ -216,7 +239,7 @@
   <!-- EUROPEAN CARS -->
   <div class="vehicle-block">
     <div class="vehicle-block-title">
-      <span class="flag flag-eu"></span>
+      <span class="flag flag-emoji">🇪🇺</span>
       <h3>Voitures européennes</h3>
     </div>
     <div class="car-grid">
@@ -263,7 +286,7 @@
   <!-- JAPANESE CARS -->
   <div class="vehicle-block">
     <div class="vehicle-block-title">
-      <span class="flag flag-jp"></span>
+      <span class="flag flag-emoji">🇯🇵</span>
       <h3>Voitures japonaises</h3>
     </div>
     <div class="car-grid">
@@ -310,7 +333,7 @@
   <!-- MOTOS -->
   <div class="vehicle-block">
     <div class="vehicle-block-title">
-      <span class="flag flag-moto"></span>
+      <span class="flag flag-emoji">🏍️</span>
       <h3>Motos &amp; Powersports</h3>
     </div>
     <div class="moto-panel">

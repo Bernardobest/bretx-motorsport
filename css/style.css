@@ -145,7 +145,17 @@ ul { margin: 0; padding: 0; list-style: none; }
   background-size: 48px 48px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 20%, black, transparent 75%);
 }
-.hero-content { max-width: 880px; margin: 0 auto; text-align: center; }
+.hero-car {
+  position: absolute;
+  bottom: -10px; right: -60px;
+  width: min(65vw, 900px);
+  opacity: 0.28;
+  z-index: -1;
+  pointer-events: none;
+  filter: drop-shadow(0 0 40px rgba(227,6,19,0.15));
+}
+.hero-car svg { width: 100%; height: auto; display: block; }
+.hero-content { position: relative; max-width: 880px; margin: 0 auto; text-align: center; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--font-head);
@@ -233,12 +243,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-family: var(--font-body); font-size: .7rem; font-weight: 700; text-transform: uppercase;
   background: var(--red); color: var(--white); padding: 4px 10px; border-radius: 999px; letter-spacing: .03em;
 }
-.flag { width: 28px; height: 20px; border-radius: 3px; flex-shrink: 0; box-shadow: 0 0 0 1px var(--border); }
-.flag-us { background: linear-gradient(180deg, var(--blue) 0 33%, var(--white) 33% 66%, var(--red) 66% 100%); }
-.flag-eu { background: linear-gradient(90deg, var(--blue) 0 30%, var(--grey-light) 30% 70%, var(--red) 70% 100%); }
-.flag-jp { background: var(--white); position: relative; }
-.flag-jp::after { content:''; position:absolute; top:50%; left:50%; width:10px; height:10px; background:var(--red); border-radius:50%; transform:translate(-50%,-50%); }
-.flag-moto { background: linear-gradient(135deg, var(--panel-2), var(--black)); border: 1px solid var(--red); }
+.flag { flex-shrink: 0; }
+.flag-emoji { font-size: 1.7rem; line-height: 1; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); }
 
 .car-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .car-card {
@@ -417,6 +423,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .header-inner { padding: 10px 16px; }
   .brand-logo { height: 34px; }
   .hero { padding: 140px 16px 70px; }
+  .hero-car { width: 100vw; right: -20px; opacity: 0.18; }
   .hero-stats { grid-template-columns: 1fr; gap: 20px; }
   .section { padding: 64px 16px; }
   .section-alt > * { padding-left: 16px; padding-right: 16px; }
