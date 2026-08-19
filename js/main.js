@@ -16,6 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Vehicle category tabs ---------- */
+  const vtabs = document.querySelectorAll('.vtab');
+  if (vtabs.length) {
+    vtabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-tab');
+        vtabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.querySelectorAll('.vehicle-block').forEach(block => {
+          block.hidden = block.id !== targetId;
+        });
+      });
+    });
+  }
+
   /* ---------- Footer year ---------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

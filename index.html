@@ -44,7 +44,7 @@
   <div class="hero-content">
     <p class="eyebrow"><span class="dot"></span>Spécialiste agréé HP Tuners — Auto &amp; Moto</p>
     <h1>La reprogrammation moteur,<br><span class="accent-red">réglée en conduite réelle.</span></h1>
-    <p class="hero-sub">Pas de banc de puissance approximatif. Chez BretX Motorsport, chaque cartographie est calibrée en conditions réelles grâce à VCM Scanner, avec sauvegarde systématique de votre configuration d'origine. Stage 1 à Stage 3, sur voitures américaines, européennes, japonaises — et sur moto.</p>
+    <p class="hero-sub">Pas de banc de puissance approximatif : chaque cartographie est calibrée en conditions réelles, avec sauvegarde systématique de votre configuration d'origine. Auto &amp; moto, Stage 1 à Stage 3.</p>
     <div class="hero-actions">
       <a href="#booking" class="btn btn-primary">Réserver un créneau</a>
       <a href="#valeurs" class="btn btn-ghost">Découvrir la méthode</a>
@@ -118,10 +118,10 @@
     </article>
   </div>
 
-  <div class="callout">
-    <div class="callout-icon">⚠</div>
-    <p><strong>Points essentiels à savoir avant de réserver :</strong> chaque véhicule reprogrammé nécessite des <strong>crédits HP Tuners</strong> propres au modèle (ils s'ajoutent au prix de la prestation, voir la section Stages &amp; Tarifs) · la reprogrammation se fait via le port OBD-II, sans démontage du calculateur pour la grande majorité des véhicules · un contrôle mécanique rapide du véhicule est effectué avant toute cartographie (état moteur, niveaux, absence de codes défaut bloquants) · le véhicule doit être en bon état de fonctionnement général — la reprogrammation optimise un moteur sain, elle ne corrige pas une panne mécanique · un acompte de 25% est demandé pour toute intervention à domicile afin de sécuriser le rendez-vous.</p>
-  </div>
+  <details class="callout">
+    <summary><span class="callout-icon">⚠</span> Points essentiels à savoir avant de réserver</summary>
+    <p>Chaque véhicule reprogrammé nécessite des <strong>crédits HP Tuners</strong> propres au modèle (ils s'ajoutent au prix de la prestation, voir la section Stages &amp; Tarifs) · la reprogrammation se fait via le port OBD-II, sans démontage du calculateur pour la grande majorité des véhicules · un contrôle mécanique rapide du véhicule est effectué avant toute cartographie · le véhicule doit être en bon état de fonctionnement général — la reprogrammation optimise un moteur sain, elle ne corrige pas une panne mécanique · un acompte de 25% est demandé pour toute intervention à domicile afin de sécuriser le rendez-vous.</p>
+  </details>
 </section>
 
 <!-- ============ VEHICULES SUPPORTÉS ============ -->
@@ -129,11 +129,18 @@
   <div class="section-head">
     <p class="kicker">Compatibilité HP Tuners</p>
     <h2>Un catalogue <span class="accent-red">large</span>, une expertise pointue sur le <span class="accent-blue">marché US</span></h2>
-    <p class="section-lead">Toutes les cartographies sont réalisées exclusivement via <strong>HP Tuners</strong>, sous licence agréée — aucun logiciel générique ou piraté. HP Tuners est historiquement le leader sur les véhicules américains, ce qui en fait le terrain de jeu naturel de BretX Motorsport. Le support s'étend aussi à une sélection croissante de modèles européens et japonais (voir HPTuners.com pour la liste officielle complète, mise à jour régulièrement).</p>
+    <p class="section-lead">Toutes les cartographies sont réalisées exclusivement via <strong>HP Tuners</strong>, sous licence agréée. Historiquement leader sur les véhicules américains — mon terrain de prédilection — avec un support croissant sur l'Europe et le Japon.</p>
+  </div>
+
+  <div class="vehicle-tabs" role="tablist">
+    <button class="vtab active" data-tab="tab-us" role="tab" aria-selected="true">🇺🇸 Américaines</button>
+    <button class="vtab" data-tab="tab-eu" role="tab" aria-selected="false">🇪🇺 Européennes</button>
+    <button class="vtab" data-tab="tab-jp" role="tab" aria-selected="false">🇯🇵 Japonaises</button>
+    <button class="vtab" data-tab="tab-moto" role="tab" aria-selected="false">🏍️ Motos</button>
   </div>
 
   <!-- US CARS -->
-  <div class="vehicle-block">
+  <div class="vehicle-block" id="tab-us">
     <div class="vehicle-block-title">
       <span class="flag flag-emoji">🇺🇸</span>
       <h3>Voitures américaines <span class="badge-strong">Notre spécialité</span></h3>
@@ -217,7 +224,7 @@
   </div>
 
   <!-- EUROPEAN CARS -->
-  <div class="vehicle-block">
+  <div class="vehicle-block" id="tab-eu" hidden>
     <div class="vehicle-block-title">
       <span class="flag flag-emoji">🇪🇺</span>
       <h3>Voitures européennes</h3>
@@ -264,7 +271,7 @@
   </div>
 
   <!-- JAPANESE CARS -->
-  <div class="vehicle-block">
+  <div class="vehicle-block" id="tab-jp" hidden>
     <div class="vehicle-block-title">
       <span class="flag flag-emoji">🇯🇵</span>
       <h3>Voitures japonaises</h3>
@@ -311,7 +318,7 @@
   </div>
 
   <!-- MOTOS -->
-  <div class="vehicle-block">
+  <div class="vehicle-block" id="tab-moto" hidden>
     <div class="vehicle-block-title">
       <span class="flag flag-emoji">🏍️</span>
       <h3>Motos &amp; Powersports</h3>

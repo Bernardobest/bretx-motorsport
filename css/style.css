@@ -147,14 +147,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero-car {
   position: absolute;
-  bottom: 40px; right: -40px;
-  width: min(60vw, 820px);
-  opacity: 0.5;
+  bottom: -70px; right: -40px;
+  width: min(52vw, 720px);
+  opacity: 0.22;
   z-index: -1;
   pointer-events: none;
-  filter: drop-shadow(0 0 50px rgba(227,6,19,0.25)) drop-shadow(0 0 90px rgba(20,84,209,0.15));
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 100%);
-  mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 100%);
+  filter: brightness(0.7) drop-shadow(0 0 50px rgba(227,6,19,0.2));
+  -webkit-mask-image: linear-gradient(100deg, transparent 0%, black 30%, black 85%, transparent 100%), linear-gradient(0deg, transparent 0%, black 35%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(100deg, transparent 0%, black 30%, black 85%, transparent 100%), linear-gradient(0deg, transparent 0%, black 35%);
+  mask-composite: intersect;
 }
 .hero-car img { width: 100%; height: auto; display: block; }
 .hero-content { position: relative; max-width: 880px; margin: 0 auto; text-align: center; }
@@ -227,14 +229,39 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .callout {
   margin-top: 40px;
-  display: flex; gap: 16px; align-items: flex-start;
   background: linear-gradient(135deg, rgba(227,6,19,0.08), rgba(20,84,209,0.05));
   border: 1px solid rgba(227,6,19,0.25);
   border-radius: var(--radius);
-  padding: 24px 28px;
+  padding: 20px 28px;
 }
-.callout-icon { font-size: 1.4rem; }
-.callout p { color: var(--grey-light); font-size: .92rem; margin: 0; }
+.callout summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--font-head); font-weight: 700; color: var(--white);
+  display: flex; align-items: center; gap: 10px;
+}
+.callout summary::-webkit-details-marker { display: none; }
+.callout summary::after { content: '+'; margin-left: auto; font-size: 1.3rem; color: var(--red); }
+.callout[open] summary::after { content: '−'; }
+.callout-icon { font-size: 1.2rem; }
+.callout p { color: var(--grey-light); font-size: .92rem; margin: 14px 0 0; }
+
+/* ---------- Vehicle tabs ---------- */
+.vehicle-tabs {
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 40px;
+}
+.vtab {
+  font-family: var(--font-head); font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+  font-size: .88rem; padding: 12px 22px; border-radius: 999px;
+  background: var(--panel); border: 1px solid var(--border); color: var(--grey-light);
+  cursor: pointer; transition: all .15s ease;
+}
+.vtab:hover { border-color: rgba(227,6,19,0.4); color: var(--white); }
+.vtab.active {
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  border-color: transparent; color: var(--white);
+  box-shadow: 0 8px 20px rgba(227,6,19,0.3);
+}
 
 /* ---------- Vehicles ---------- */
 .vehicle-block { margin-bottom: 64px; }
