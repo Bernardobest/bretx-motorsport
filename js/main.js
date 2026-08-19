@@ -96,6 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 300);
 
+  /* ---------- Stripe deposit link ----------
+     Remplace STRIPE_LINK par ton Stripe Payment Link réel
+     (Dashboard Stripe > Payment Links > Créer un lien pour l'acompte 25%). */
+  const STRIPE_LINK = "https://buy.stripe.com/REMPLACER_PAR_TON_LIEN"; // <-- À CONFIGURER
+  const stripeBtn = document.getElementById('stripeDepositLink');
+  if (stripeBtn) stripeBtn.setAttribute('href', STRIPE_LINK);
+
   /* ---------- Simple client-side validation feedback (Netlify handles submission) ---------- */
   const form = document.getElementById('contactForm');
   if (form) {
