@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
      Remplace CAL_LINK par ton lien Cal.com réel
      (ex: "ton-pseudo/reprogrammation-moteur"). Créer un compte gratuit sur cal.com,
      configurer tes disponibilités, puis coller le lien ici. */
-  const CAL_LINK = "bretx-motorsport/reprogrammation-moteur"; // <-- À CONFIGURER
+  const CAL_LINK = "bernardo-bb-7vad5u/rendez-vous-bretx-motorsport";
   const calContainer = document.getElementById('cal-inline');
 
   function initCalEmbed() {
