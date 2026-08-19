@@ -40,19 +40,15 @@ Une fois le site en ligne, dans Netlify : Domain settings > Add a domain. Si tu 
    Remplace par ton vrai lien Cal.com.
 7. Cal.com envoie automatiquement un email de confirmation au client ET à toi à chaque réservation — rien d'autre à configurer.
 
-## 4. Acompte 25% via Stripe
+## 4. Acompte 25% par virement bancaire
 
-1. Connecte-toi à ton compte Stripe existant : https://dashboard.stripe.com
-2. Va dans Payment Links > Créer un lien de paiement.
-3. Crée un produit "Acompte réservation à domicile" avec un montant (tu peux faire un lien à montant variable, le client indique le montant demandé, ou plusieurs liens à montants fixes selon tes forfaits).
-4. Copie le lien généré (`https://buy.stripe.com/...`).
-5. Ouvre `js/main.js`, ligne ~93 :
-   ```js
-   const STRIPE_LINK = "https://buy.stripe.com/REMPLACER_PAR_TON_LIEN"; // <-- À CONFIGURER
-   ```
-   Remplace par ton vrai lien.
+Pas de configuration technique nécessaire — le site explique simplement que le RIB est envoyé par email après la réservation. Concrètement, à chaque nouvelle réservation Cal.com :
 
-**Fonctionnement actuel :** le client réserve sur Cal.com, tu confirmes le montant exact de l'acompte par email/téléphone, puis il clique sur le bouton "Verser mon acompte via Stripe" sur le site. Si tu veux automatiser complètement (montant exact déjà pré-rempli selon le véhicule), il faudra passer à une intégration Stripe Checkout sur-mesure — dis-le moi si tu veux qu'on fasse évoluer le site dans cette direction plus tard.
+1. Tu contactes le client pour confirmer le montant exact de l'acompte (25% du devis).
+2. Tu lui envoies ton RIB par email avec ce montant et une référence claire (ex: nom + date du RDV) pour identifier facilement le virement reçu.
+3. Le rendez-vous est confirmé dès réception du virement sur ton compte.
+
+Pas de frais de transaction (contrairement à Stripe/carte bancaire), mais le paiement n'est pas instantané — prévois un délai de 1 à 2 jours ouvrés pour recevoir les virements SEPA classiques (les virements instantanés arrivent en quelques secondes si toi et le client avez cette option activée dans votre banque).
 
 ## 5. Formulaire de contact (déjà fonctionnel, aucune config technique requise)
 
@@ -75,7 +71,7 @@ Le logo fourni est déjà intégré (`img/logo.png`).
 ## 8. Ce qu'il reste à personnaliser / vérifier avant le lancement
 
 - [ ] Configurer `CAL_LINK` (étape 3)
-- [ ] Configurer `STRIPE_LINK` (étape 4)
+- [ ] Préparer ton RIB à envoyer manuellement après chaque réservation (étape 4)
 - [ ] Vérifier/mettre à jour l'adresse email de contact
 - [ ] Ajouter les notifications email sur Netlify Forms (étape 5)
 - [ ] Remplacer les tarifs "sur devis" par tes prix réels une fois affinés vs concurrence
@@ -90,7 +86,7 @@ bretx-motorsport/
 ├── index.html          Page principale
 ├── success.html         Page de confirmation après envoi du formulaire
 ├── css/style.css        Toute la charte graphique
-├── js/main.js           Menu mobile, animations, embed Cal.com, lien Stripe
+├── js/main.js           Menu mobile, animations, embed Cal.com
 ├── img/logo.png          Logo BretX Motorsport
 └── netlify.toml          Config de déploiement Netlify
 ```
