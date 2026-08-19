@@ -75,42 +75,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const CAL_LINK = "bernardo-bb-7vad5u/rendez-vous-bretx-motorsport";
   const calContainer = document.getElementById('cal-inline');
 
-  function initCalEmbed() {
-    if (typeof Cal === 'undefined') return false;
-    try {
-      Cal("init", { origin: "https://cal.com" });
-      Cal("inline", {
-        elementOrSelector: "#cal-inline",
-        calLink: CAL_LINK,
-        config: { theme: "dark", layout: "month_view" }
-      });
-      Cal("ui", {
-        theme: "dark",
-        styles: { branding: { brandColor: "#e30613" } },
-        hideEventTypeDetails: false
-      });
-      return true;
-    } catch (e) {
-      return false;
-    }
+  if (typeof Cal === 'function') {
+    Cal("init", { origin: "https://cal.com" });
+    Cal("inline", {
+      elementOrSelector: "#cal-inline",
+      calLink: CAL_LINK,
+      config: { theme: "dark", layout: "month_view" }
+    });
+    Cal("ui", {
+      theme: "dark",
+      styles: { branding: { brandColor: "#e30613" } },
+      hideEventTypeDetails: false
+    });
   }
 
-  // Try to init; if the Cal script hasn't loaded yet, retry briefly, then fall back.
-  let attempts = 0;
-  const tryInterval = setInterval(() => {
-    attempts++;
-    if (initCalEmbed() || attempts > 20) {
-      clearInterval(tryInterval);
-      if (attempts > 20 && calContainer && !calContainer.querySelector('iframe')) {
-        calContainer.innerHTML = `
-          <div class="booking-fallback">
-            <p>Le calendrier de réservation n'a pas pu se charger.</p>
-            <p>Réservez directement via <a href="https://cal.com/${CAL_LINK}" target="_blank" rel="noopener">ce lien</a>,
-            ou contactez-moi via le formulaire ci-dessous.</p>
-          </div>`;
-      }
+  // Safety net: if after a few seconds no iframe appeared, show a manual link instead.
+  setTimeout(() => {
+    if (calContainer && !calContainer.querySelector('iframe')) {
+      calContainer.innerHTML = `
+        <div class="booking-fallback">
+          <p>Le calendrier de réservation n'a pas pu se charger.</p>
+          <p>Réservez directement via <a href="https://cal.com/${CAL_LINK}" target="_blank" rel="noopener">ce lien</a>,
+          ou contactez-moi via le formulaire ci-dessous.</p>
+        </div>`;
     }
-  }, 300);
+  }, 6000);
 
   /* ---------- Simple client-side validation feedback (Netlify handles submission) ---------- */
   const form = document.getElementById('contactForm');
