@@ -147,14 +147,16 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero-car {
   position: absolute;
-  bottom: -10px; right: -60px;
-  width: min(65vw, 900px);
-  opacity: 0.28;
+  bottom: 40px; right: -40px;
+  width: min(60vw, 820px);
+  opacity: 0.5;
   z-index: -1;
   pointer-events: none;
-  filter: drop-shadow(0 0 40px rgba(227,6,19,0.15));
+  filter: drop-shadow(0 0 50px rgba(227,6,19,0.25)) drop-shadow(0 0 90px rgba(20,84,209,0.15));
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 18%, black 100%);
 }
-.hero-car svg { width: 100%; height: auto; display: block; }
+.hero-car img { width: 100%; height: auto; display: block; }
 .hero-content { position: relative; max-width: 880px; margin: 0 auto; text-align: center; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
