@@ -337,6 +337,38 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .moto-text p { color: var(--grey-light); font-size: .95rem; }
 .moto-text p:last-child { margin-bottom: 0; }
+
+/* ---------- Page header (sub-pages) ---------- */
+.page-header {
+  padding: 150px 24px 56px; text-align: center;
+  background: linear-gradient(180deg, rgba(227,6,19,0.08), transparent 65%);
+  border-bottom: 1px solid var(--border);
+}
+.breadcrumb { font-size: .82rem; color: var(--grey); margin-bottom: 16px; }
+.breadcrumb a { color: var(--grey-light); }
+.breadcrumb a:hover { color: var(--white); }
+.page-header h1 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: .5em; }
+.page-header .section-lead { max-width: 760px; margin: 0 auto; }
+
+/* ---------- Price table ---------- */
+.price-table-wrap {
+  overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--panel); margin-bottom: 18px;
+}
+.price-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.price-table th, .price-table td { padding: 16px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: .92rem; }
+.price-table th {
+  font-family: var(--font-head); text-transform: uppercase; letter-spacing: .03em;
+  font-size: .76rem; color: var(--grey-light); background: rgba(255,255,255,0.02);
+}
+.price-table tr:last-child td { border-bottom: none; }
+.price-table td.veh-name { font-weight: 600; color: var(--white); }
+.price-table td.veh-engine { color: var(--grey); font-size: .85rem; }
+.price-table td.price-cell { font-family: var(--font-head); font-weight: 700; color: var(--red); white-space: nowrap; }
+.price-table td.price-cell.blue { color: var(--blue-light); }
+.price-category-note { margin: 0 0 44px; color: var(--grey); font-size: .88rem; }
+.price-legend { display: flex; gap: 10px; align-items: flex-start; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 40px; }
+.price-legend p { color: var(--grey-light); font-size: .88rem; margin: 0; }
 .moto-badges { display: flex; flex-direction: column; gap: 10px; }
 .moto-badge {
   text-align: center; font-family: var(--font-head); font-weight: 700; text-transform: uppercase; letter-spacing: .04em;
@@ -471,6 +503,9 @@ ul { margin: 0; padding: 0; list-style: none; }
   .booking-embed { grid-column: 1; }
   .moto-panel { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 980px) {
+  .page-header { padding: 130px 20px 44px; }
 }
 @media (max-width: 620px) {
   .header-inner { padding: 10px 16px; }
