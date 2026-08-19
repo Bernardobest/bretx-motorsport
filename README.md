@@ -62,7 +62,7 @@ Les messages restent aussi consultables dans Netlify > Forms.
 
 ## 6. Adresse email de contact affichée sur le site
 
-Le site affiche actuellement `contact@bretx-motorsport.fr` (placeholder). Remplace-la dans `index.html` (recherche `contact@bretx-motorsport.fr`, 2 occurrences) par ton adresse réelle si différente, ou crée cette adresse via ton hébergeur de domaine / Google Workspace.
+Le site affiche actuellement `ads.jeremy.bret@gmail.com` (placeholder). Remplace-la dans `index.html` (recherche `ads.jeremy.bret@gmail.com`, 2 occurrences) par ton adresse réelle si différente, ou crée cette adresse via ton hébergeur de domaine / Google Workspace.
 
 ## 7. Logo
 
